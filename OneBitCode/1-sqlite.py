@@ -7,3 +7,4 @@ connection = sqlite3.connect('title.db')
 
 # 3 - Verificar se houve alterações no base de dados
 print(connection.total_changes)
+

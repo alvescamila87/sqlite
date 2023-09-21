@@ -14,17 +14,15 @@ e manipular os registros em um DB
 
 cursor = connection.cursor()
 
-# 3 - Criando a tabela
-
+# 3 - Inserindo dados
 cursor.execute("""
-    CREATE TABLE movies (
-        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
-        name TEXT NOT NULL,
-        year INTEGER NOT NULL,
-        score REAL NOT NULL
-    );        
+    INSERT INTO movies (name, year, score)
+    VALUES ('Home Alone', 1990, 7.7)
                 """)
 
-# 4 - Fechando a conexão
-print("Tabela criada com sucesso!")
+# 4 - Gravando dados no DB
+connection.commit()
+print("Dados inseridos com sucesso!")
+
+# 5 - Fechando a conexão
 connection.close()
